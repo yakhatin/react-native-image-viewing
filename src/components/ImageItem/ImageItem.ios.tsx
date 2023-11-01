@@ -6,7 +6,7 @@
  *
  */
 
-import React, { ComponentType, useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 import {
   Animated,
@@ -41,7 +41,7 @@ type Props = {
   delayLongPress: number;
   swipeToCloseEnabled?: boolean;
   doubleTapToZoomEnabled?: boolean;
-  loader?: ComponentType;
+  loader?: JSX.Element;
 };
 
 const ImageItem = ({

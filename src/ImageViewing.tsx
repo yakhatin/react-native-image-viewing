@@ -42,7 +42,7 @@ type Props = {
   delayLongPress?: number;
   HeaderComponent?: ComponentType<{ imageIndex: number }>;
   FooterComponent?: ComponentType<{ imageIndex: number }>;
-  loader?: ComponentType;
+  loader?: JSX.Element;
 };
 
 const DEFAULT_ANIMATION_TYPE = "fade";
