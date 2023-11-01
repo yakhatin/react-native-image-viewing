@@ -28,7 +28,7 @@ declare type Props = {
     FooterComponent?: ComponentType<{
         imageIndex: number;
     }>;
-    loader?: ComponentType;
+    loader?: JSX.Element;
 };
 declare const EnhancedImageViewing: (props: Props) => JSX.Element;
 export default EnhancedImageViewing;
