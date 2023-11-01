@@ -6,7 +6,7 @@
  *
  */
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { ComponentType, useCallback, useRef, useState } from "react";
 
 import {
   Animated,
@@ -39,6 +39,7 @@ type Props = {
   delayLongPress: number;
   swipeToCloseEnabled?: boolean;
   doubleTapToZoomEnabled?: boolean;
+  loader?: ComponentType;
 };
 
 const ImageItem = ({
@@ -49,6 +50,7 @@ const ImageItem = ({
   delayLongPress,
   swipeToCloseEnabled = true,
   doubleTapToZoomEnabled = true,
+  loader,
 }: Props) => {
   const imageContainer = useRef<ScrollView & NativeMethodsMixin>(null);
   const imageDimensions = useImageDimensions(imageSrc);
@@ -137,7 +139,7 @@ const ImageItem = ({
         style={imageStylesWithOpacity}
         onLoad={onLoaded}
       />
-      {(!isLoaded || !imageDimensions) && <ImageLoading />}
+      {(!isLoaded || !imageDimensions) && (loader || <ImageLoading />)}
     </ScrollView>
   );
 };
